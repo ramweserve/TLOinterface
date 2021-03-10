@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<n4tlo:RailcarResponse xmlns:n4tlo="http://www.syncrotess.com/external/n4-tlo" xmlns:types="http://www.syncrotess.com/external/n4-tlo/types" xmlns:common="http://www.syncrotess.com/external/n4-tlo/common/types" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.syncrotess.com/external/n4-tlo/n4-tlo-messages.xsd">
+	<common:header>
+		<common:senderId>N4</common:senderId>
+		<common:receiverId>TLO</common:receiverId>
+		<common:interfaceVersion/>
+		<common:timestamp>2020-10-02T03:24:06.000</common:timestamp>
+	</common:header>
+	<n4tlo:railcars>
+		<types:railcar>
+			<types:id>RTOR100001</types:id>
+			<types:railcarType>S169</types:railcarType>
+			<types:ownerRailway>TNR</types:ownerRailway>
+			<types:damaged>GOOD</types:damaged>
+			<types:inspected>true</types:inspected>
+			<types:inboundSubTrain>199-03I17</types:inboundSubTrain>
+			<types:outboundSubTrain/>
+			<types:fixedOutboundSubTrain>false</types:fixedOutboundSubTrain>
+			<types:destination>TOR</types:destination>
+			<types:locked>false</types:locked>
+			<types:position>
+				<types:track>1</types:track>
+				<types:metermark unit="mm">200000</types:metermark>
+			</types:position>
+			<types:orientation>not_flipped</types:orientation>
+			<types:platforms>
+				<types:platform>
+					<types:id>A</types:id>
+					<types:type>S169A</types:type>
+					<types:lockedTiers>NONE</types:lockedTiers>
+					<types:loadContainers />
+					<types:remainingDischargeContainers />
+					<types:coningStatus>REMOVED</types:coningStatus>
+					<types:position>
+						<types:track>1</types:track>
+						<types:metermark unit="mm">200000</types:metermark>
+					</types:position>
+					<types:numberOfSlots>2</types:numberOfSlots>
+					<types:maxNetWeight unit="kg">54159.0</types:maxNetWeight>
+					<types:max20ftContainerWeight unit="kg">200000.0</types:max20ftContainerWeight>
+					<types:allowedLengthTypesBottomTier>
+						<types:containerLengthType>20</types:containerLengthType>
+						<types:containerLengthType>40</types:containerLengthType>
+					</types:allowedLengthTypesBottomTier>
+					<types:allowedLengthTypesTopTier>
+						<types:containerLengthType>40</types:containerLengthType>
+						<types:containerLengthType>45</types:containerLengthType>
+					</types:allowedLengthTypesTopTier>
+				</types:platform>
+			</types:platforms>
+		</types:railcar>
+		<types:railcar>
+			<types:id>RCHI100001</types:id>
+			<types:railcarType>S367</types:railcarType>
+			<types:ownerRailway>CNR</types:ownerRailway>
+			<types:damaged>GOOD</types:damaged>
+			<types:inspected>true</types:inspected>
+			<types:inboundSubTrain>199-03I17</types:inboundSubTrain>
+			<types:outboundSubTrain/>
+			<types:fixedOutboundSubTrain>false</types:fixedOutboundSubTrain>
+			<types:destination>CHI</types:destination>
+			<types:locked>false</types:locked>
+			<types:position>
+				<types:track>1</types:track>
+				<types:metermark unit="mm">230000</types:metermark>
+			</types:position>
+			<types:orientation>not_flipped</types:orientation>
+			<types:platforms>
+				<types:platform>
+					<types:id>A</types:id>
+					<types:type>S367A</types:type>
+					<types:lockedTiers>NONE</types:lockedTiers>
+					<types:loadContainers />
+					<types:remainingDischargeContainers />
+					<types:coningStatus>REMOVED</types:coningStatus>
+					<types:position>
+						<types:track>1</types:track>
+						<types:metermark unit="mm">230000</types:metermark>
+					</types:position>
+					<types:maxNetWeight unit="kg">54159.0</types:maxNetWeight>
+					<types:max20ftContainerWeight unit="kg">200000.0</types:max20ftContainerWeight>
+					<types:allowedLengthTypesBottomTier>
+						<types:containerLengthType>20</types:containerLengthType>
+						<types:containerLengthType>40</types:containerLengthType>
+					</types:allowedLengthTypesBottomTier>
+					<types:allowedLengthTypesTopTier>
+						<types:containerLengthType>40</types:containerLengthType>
+						<types:containerLengthType>45</types:containerLengthType>
+					</types:allowedLengthTypesTopTier>
+				</types:platform>
+			</types:platforms>
+		</types:railcar>
+	</n4tlo:railcars>
+</n4tlo:RailcarResponse>

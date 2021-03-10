@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.syncrotess.com/external/n4-tlo" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <xs:import namespace="http://www.syncrotess.com/external/n4-tlo/common/types" schemaLocation="Header.xsd" />
+  <xs:import namespace="http://www.syncrotess.com/external/n4-tlo/types" schemaLocation="RailcarType.xsd" />
+
+  <xs:element name="RailcarTypeResponse" type="n4:RailcarTypeResponseType" xmlns:n4="http://www.syncrotess.com/external/n4-tlo"/>
+  <xs:complexType name="railcarTypesType">
+    <xs:sequence>
+      <xs:element ref="typ:railcarType" maxOccurs="unbounded" minOccurs="0" xmlns:typ="http://www.syncrotess.com/external/n4-tlo/types"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="RailcarTypeResponseType">
+    <xs:sequence>
+      <xs:element ref="typ:header" xmlns:typ="http://www.syncrotess.com/external/n4-tlo/common/types"/>
+      <xs:element type="n4:railcarTypesType" name="railcarTypes" xmlns:n4="http://www.syncrotess.com/external/n4-tlo"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

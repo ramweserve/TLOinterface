@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<n4tlo:ContainerUpdateNotification xmlns:common="http://www.syncrotess.com/external/n4-tlo/common/types"
+ xmlns:types="http://www.syncrotess.com/external/n4-tlo/types"
+ xmlns:n4tlo="http://www.syncrotess.com/external/n4-tlo"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="http://www.syncrotess.com/external/n4-tlo file:/C:/dev/src/DPWorld/currentInterfaces/tlo/git/external-n4-tlo/n4-tlo-messages.xsd">
+    <common:header>
+        <common:senderId>senderId0</common:senderId>
+        <common:receiverId>receiverId0</common:receiverId>
+        <common:interfaceVersion>interfaceVersion0</common:interfaceVersion>
+        <common:timestamp>2006-05-04T18:13:51.0</common:timestamp>
+        <common:requestResponseId>requestResponseId0</common:requestResponseId>
+    </common:header>
+    <n4tlo:container>
+        <types:id>TFTU123123</types:id>
+        <types:lengthType>20</types:lengthType>
+        <types:tareWeight unit="kg">7000</types:tareWeight>
+        <types:height unit="ft">86</types:height>
+        <types:isoCode>2270</types:isoCode>
+        <types:reefer>false</types:reefer>
+        <types:tank>false</types:tank>
+        <types:flatrack>false</types:flatrack>
+        <types:overheightOpenTop>false</types:overheightOpenTop>
+        <types:wellSuitable>false</types:wellSuitable>
+        <types:empty>false</types:empty>
+        <types:pairable>false</types:pairable>
+        <types:pairedWith>TFTU987987</types:pairedWith>
+        <types:grossWeight unit="kg">9000</types:grossWeight>
+        <types:hazardous>true</types:hazardous>
+        <types:oog>false</types:oog>
+        <types:onlyGroundSlot>false</types:onlyGroundSlot>
+        <types:stackable>false</types:stackable>
+        <types:holds>
+            <types:hold>
+                <types:type>DAMAGE</types:type>
+            </types:hold>
+            <types:hold>
+                <types:type>RAIL OCR FLAG</types:type>
+            </types:hold>
+        </types:holds>
+        <types:currentLocation>IY1.01</types:currentLocation>
+        <types:toLocation>DTTX123123.AB1</types:toLocation>
+        <types:arrivalTime>2006-05-04T18:13:51.0</types:arrivalTime>
+        <types:priority>5</types:priority>
+        <types:destination>BOS</types:destination>
+        <types:railway>CNR</types:railway>
+        <types:lockedOnSlot>false</types:lockedOnSlot>
+        <types:specialStow1>ONLY_GROUNDSLOT</types:specialStow1>
+        <types:dangerousGoodsClass>2</types:dangerousGoodsClass>
+    </n4tlo:container>
+</n4tlo:ContainerUpdateNotification>

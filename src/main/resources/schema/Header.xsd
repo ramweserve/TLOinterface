@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified"
+           targetNamespace="http://www.syncrotess.com/external/n4-tlo/common/types"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="header" type="typ:headerType" xmlns:typ="http://www.syncrotess.com/external/n4-tlo/common/types"/>
+  <xs:complexType name="headerType">
+    <xs:sequence>
+      <xs:element type="xs:string" name="senderId"/>
+      <xs:element type="xs:string" name="receiverId"/>
+      <xs:element type="xs:string" name="interfaceVersion"/>
+      <xs:element type="xs:string" name="timestamp"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

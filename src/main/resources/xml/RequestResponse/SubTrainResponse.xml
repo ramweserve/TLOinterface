@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<n4tlo:SubTrainResponse xmlns:n4tlo="http://www.syncrotess.com/external/n4-tlo"
+ xmlns:types="http://www.syncrotess.com/external/n4-tlo/types"
+ xmlns:common="http://www.syncrotess.com/external/n4-tlo/common/types"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="http://www.syncrotess.com/external/n4-tlo file:/C:/dev/src/DPWorld/currentInterfaces/tlo/git/external-n4-tlo/n4-tlo-messages.xsd">
+    <common:header>
+        <common:senderId>senderId0</common:senderId>
+        <common:receiverId>receiverId0</common:receiverId>
+        <common:interfaceVersion>interfaceVersion0</common:interfaceVersion>
+        <common:timestamp>2006-05-04T18:13:51.0</common:timestamp>
+        <common:requestResponseId>requestResponseId0</common:requestResponseId>
+    </common:header>
+    <n4tlo:subTrains>
+        <types:subTrain>
+            <types:id>id0</types:id>
+            <types:status>PLANNED</types:status>
+            <types:etd>2006-05-04T18:13:51.0</types:etd>
+            <types:locked>false</types:locked>
+        </types:subTrain>
+        <types:subTrain>
+            <types:id>id1</types:id>
+            <types:status>PLANNED</types:status>
+            <types:etd>2006-05-04T18:13:51.0</types:etd>
+            <types:locked>false</types:locked>
+        </types:subTrain>
+    </n4tlo:subTrains>
+</n4tlo:SubTrainResponse>

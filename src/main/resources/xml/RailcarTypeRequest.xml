@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<n4tlo:RailcarTypeRequest xmlns:n4tlo="http://www.syncrotess.com/external/n4-tlo" xmlns:types="http://www.syncrotess.com/external/n4-tlo/types" xmlns:common="http://www.syncrotess.com/external/n4-tlo/common/types" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.syncrotess.com/external/n4-tlo/n4-tlo-messages.xsd">
+<common:header>
+    <common:senderId>N4</common:senderId>
+    <common:receiverId>TLO</common:receiverId>
+    <common:interfaceVersion/>
+    <common:timestamp>2020-10-02T03:24:06.000</common:timestamp>
+</common:header>
+</n4tlo:RailcarTypeRequest>

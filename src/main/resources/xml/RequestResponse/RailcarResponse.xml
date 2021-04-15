@@ -1,0 +1,300 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<n4tlo:RailcarResponse xmlns:common="http://www.syncrotess.com/external/n4-tlo/common/types"
+ xmlns:types="http://www.syncrotess.com/external/n4-tlo/types"
+ xmlns:n4tlo="http://www.syncrotess.com/external/n4-tlo"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="http://www.syncrotess.com/external/n4-tlo file:/C:/dev/src/DPWorld/currentInterfaces/tlo/git/external-n4-tlo/n4-tlo-messages.xsd">
+    <common:header>
+        <common:senderId>senderId0</common:senderId>
+        <common:receiverId>receiverId0</common:receiverId>
+        <common:interfaceVersion>interfaceVersion0</common:interfaceVersion>
+        <common:timestamp>2006-05-04T18:13:51.0</common:timestamp>
+        <common:requestResponseId>requestResponseId0</common:requestResponseId>
+    </common:header>
+    <n4tlo:railcars>
+        <types:railcar>
+            <types:id>DTTX123123</types:id>
+            <types:railcarType>S615</types:railcarType>
+            <types:ownerRailway>CNR</types:ownerRailway>
+            <types:damaged>GOOD</types:damaged>
+            <types:inspected>true</types:inspected>
+            <types:inboundSubTrain>inboundSubTrain0</types:inboundSubTrain>
+            <types:outboundSubTrain>outboundSubTrain0</types:outboundSubTrain>
+            <types:fixedOutboundSubTrain>false</types:fixedOutboundSubTrain>
+            <types:destination>BOS</types:destination>
+            <types:locked>false</types:locked>
+            <types:position>
+                <types:track>T1</types:track>
+                <types:metermark unit="mm">100000</types:metermark>
+                <types:sequenceNumber>1</types:sequenceNumber>
+            </types:position>
+            <types:orientation>flipped</types:orientation>
+            <types:platforms>
+                <types:platform>
+                    <types:id>A</types:id>
+                    <types:type>S615A</types:type>
+                    <types:lockedTiers>NONE</types:lockedTiers>
+                    <types:loadContainers>
+                    </types:loadContainers>
+                    <types:remainingDischargeContainers>
+                    </types:remainingDischargeContainers>
+                	<types:coningStatus>REMOVED</types:coningStatus>
+                    <types:position>
+                        <types:track>T1</types:track>
+                        <types:metermark unit="mm">110000</types:metermark>
+                    </types:position>
+                    <types:numberOfSlots>2</types:numberOfSlots>
+                    <types:maxNetWeight unit="kg">70000</types:maxNetWeight>
+                    <types:max20ftContainerWeight unit="kg">20000</types:max20ftContainerWeight>
+					<types:allowedLengthTypesAndPositionsBottomTier>
+						<types:containerLengthTypeWithPositions>
+							<types:containerLengthType>20</types:containerLengthType>
+							<types:track>T1</types:track>
+							<types:metermark unit="mm">105000</types:metermark>
+							<types:platformSlotPosition>
+								<types:slot>1</types:slot>
+							</types:platformSlotPosition>
+						</types:containerLengthTypeWithPositions>
+						<types:containerLengthTypeWithPositions>
+							<types:containerLengthType>20</types:containerLengthType>
+							<types:track>T1</types:track>
+							<types:metermark unit="mm">115000</types:metermark>
+							<types:platformSlotPosition>
+								<types:slot>2</types:slot>
+							</types:platformSlotPosition>
+						</types:containerLengthTypeWithPositions>
+						<types:containerLengthTypeWithPositions>
+							<types:containerLengthType>40</types:containerLengthType>
+							<types:track>T1</types:track>
+							<types:metermark unit="mm">110000</types:metermark>
+							<types:platformSlotPosition>
+								<types:slot>1</types:slot>
+							</types:platformSlotPosition>
+							<types:platformSlotPosition>
+								<types:slot>2</types:slot>
+							</types:platformSlotPosition>
+						</types:containerLengthTypeWithPositions>
+					</types:allowedLengthTypesAndPositionsBottomTier>
+					<types:allowedLengthTypesAndPositionsTopTier>
+						<types:containerLengthTypeWithPositions>
+							<types:containerLengthType>40</types:containerLengthType>
+							<types:track>T1</types:track>
+							<types:metermark unit="mm">110000</types:metermark>
+							<types:platformSlotPosition>
+								<types:slot>1</types:slot>
+							</types:platformSlotPosition>
+							<types:platformSlotPosition>
+								<types:slot>2</types:slot>
+							</types:platformSlotPosition>
+						</types:containerLengthTypeWithPositions>
+					</types:allowedLengthTypesAndPositionsTopTier>
+                </types:platform>
+                <types:platform>
+                    <types:id>B</types:id>
+                    <types:type>S615B</types:type>
+                    <types:lockedTiers>NONE</types:lockedTiers>
+                    <types:loadContainers>
+                    </types:loadContainers>
+                    <types:remainingDischargeContainers>
+                    </types:remainingDischargeContainers>
+                	<types:coningStatus>REMOVED</types:coningStatus>
+                    <types:position>
+                        <types:track>T1</types:track>
+                        <types:metermark unit="mm">120000</types:metermark>
+                    </types:position>
+                    <types:numberOfSlots>2</types:numberOfSlots>
+                    <types:maxNetWeight unit="kg">70000</types:maxNetWeight>
+                    <types:max20ftContainerWeight unit="kg">20000</types:max20ftContainerWeight>
+					<types:allowedLengthTypesAndPositionsBottomTier>
+						<types:containerLengthTypeWithPositions>
+							<types:containerLengthType>20</types:containerLengthType>
+							<types:track>T1</types:track>
+							<types:metermark unit="mm">115000</types:metermark>
+							<types:platformSlotPosition>
+								<types:slot>1</types:slot>
+							</types:platformSlotPosition>
+						</types:containerLengthTypeWithPositions>
+						<types:containerLengthTypeWithPositions>
+							<types:containerLengthType>20</types:containerLengthType>
+							<types:track>T1</types:track>
+							<types:metermark unit="mm">125000</types:metermark>
+							<types:platformSlotPosition>
+								<types:slot>2</types:slot>
+							</types:platformSlotPosition>
+						</types:containerLengthTypeWithPositions>
+						<types:containerLengthTypeWithPositions>
+							<types:containerLengthType>40</types:containerLengthType>
+							<types:track>T1</types:track>
+							<types:metermark unit="mm">120000</types:metermark>
+							<types:platformSlotPosition>
+								<types:slot>1</types:slot>
+							</types:platformSlotPosition>
+							<types:platformSlotPosition>
+								<types:slot>2</types:slot>
+							</types:platformSlotPosition>
+						</types:containerLengthTypeWithPositions>
+					</types:allowedLengthTypesAndPositionsBottomTier>
+					<types:allowedLengthTypesAndPositionsTopTier>
+						<types:containerLengthTypeWithPositions>
+							<types:containerLengthType>40</types:containerLengthType>
+							<types:track>T1</types:track>
+							<types:metermark unit="mm">120000</types:metermark>
+							<types:platformSlotPosition>
+								<types:slot>1</types:slot>
+							</types:platformSlotPosition>
+							<types:platformSlotPosition>
+								<types:slot>2</types:slot>
+							</types:platformSlotPosition>
+						</types:containerLengthTypeWithPositions>
+					</types:allowedLengthTypesAndPositionsTopTier>
+                </types:platform>
+            </types:platforms>
+			<types:maxNetWeight unit="kg">80000</types:maxNetWeight>
+            <types:length unit="mm">20000</types:length>
+            <types:reeferSuitableTopTier>false</types:reeferSuitableTopTier>
+            <types:reeferSuitableBottomTier>false</types:reeferSuitableBottomTier>
+        </types:railcar>
+        <types:railcar>
+            <types:id>DTTX987987</types:id>
+            <types:railcarType>S615</types:railcarType>
+            <types:ownerRailway>CNR</types:ownerRailway>
+            <types:damaged>GOOD</types:damaged>
+            <types:inspected>true</types:inspected>
+            <types:inboundSubTrain>inboundSubTrain0</types:inboundSubTrain>
+            <types:outboundSubTrain>outboundSubTrain0</types:outboundSubTrain>
+            <types:fixedOutboundSubTrain>false</types:fixedOutboundSubTrain>
+            <types:destination>BOS</types:destination>
+            <types:locked>false</types:locked>
+            <types:position>
+                <types:track>T1</types:track>
+                <types:metermark unit="mm">130000</types:metermark>
+                <types:sequenceNumber>2</types:sequenceNumber>
+            </types:position>
+            <types:orientation>flipped</types:orientation>
+            <types:platforms>
+                <types:platform>
+                    <types:id>A</types:id>
+                    <types:type>S615A</types:type>
+                    <types:lockedTiers>NONE</types:lockedTiers>
+                    <types:loadContainers>
+                    </types:loadContainers>
+                    <types:remainingDischargeContainers>
+                    </types:remainingDischargeContainers>
+                	<types:coningStatus>REMOVED</types:coningStatus>
+                    <types:position>
+                        <types:track>T1</types:track>
+                        <types:metermark unit="mm">130000</types:metermark>
+                    </types:position>
+                    <types:numberOfSlots>2</types:numberOfSlots>
+                    <types:maxNetWeight unit="kg">70000</types:maxNetWeight>
+                    <types:max20ftContainerWeight unit="kg">20000</types:max20ftContainerWeight>
+					<types:allowedLengthTypesAndPositionsBottomTier>
+						<types:containerLengthTypeWithPositions>
+							<types:containerLengthType>20</types:containerLengthType>
+							<types:track>T1</types:track>
+							<types:metermark unit="mm">125000</types:metermark>
+							<types:platformSlotPosition>
+								<types:slot>1</types:slot>
+							</types:platformSlotPosition>
+						</types:containerLengthTypeWithPositions>
+						<types:containerLengthTypeWithPositions>
+							<types:containerLengthType>20</types:containerLengthType>
+							<types:track>T1</types:track>
+							<types:metermark unit="mm">135000</types:metermark>
+							<types:platformSlotPosition>
+								<types:slot>2</types:slot>
+							</types:platformSlotPosition>
+						</types:containerLengthTypeWithPositions>
+						<types:containerLengthTypeWithPositions>
+							<types:containerLengthType>40</types:containerLengthType>
+							<types:track>T1</types:track>
+							<types:metermark unit="mm">130000</types:metermark>
+							<types:platformSlotPosition>
+								<types:slot>1</types:slot>
+							</types:platformSlotPosition>
+							<types:platformSlotPosition>
+								<types:slot>2</types:slot>
+							</types:platformSlotPosition>
+						</types:containerLengthTypeWithPositions>
+					</types:allowedLengthTypesAndPositionsBottomTier>
+					<types:allowedLengthTypesAndPositionsTopTier>
+						<types:containerLengthTypeWithPositions>
+							<types:containerLengthType>40</types:containerLengthType>
+							<types:track>T1</types:track>
+							<types:metermark unit="mm">130000</types:metermark>
+							<types:platformSlotPosition>
+								<types:slot>1</types:slot>
+							</types:platformSlotPosition>
+							<types:platformSlotPosition>
+								<types:slot>2</types:slot>
+							</types:platformSlotPosition>
+						</types:containerLengthTypeWithPositions>
+					</types:allowedLengthTypesAndPositionsTopTier>
+                </types:platform>
+                <types:platform>
+                    <types:id>B</types:id>
+                    <types:type>S615B</types:type>
+                    <types:lockedTiers>NONE</types:lockedTiers>
+                    <types:loadContainers>
+                    </types:loadContainers>
+                    <types:remainingDischargeContainers>
+                    </types:remainingDischargeContainers>
+                	<types:coningStatus>REMOVED</types:coningStatus>
+                    <types:position>
+                        <types:track>T1</types:track>
+                        <types:metermark unit="mm">140000</types:metermark>
+                    </types:position>
+                    <types:numberOfSlots>2</types:numberOfSlots>
+                    <types:maxNetWeight unit="kg">70000</types:maxNetWeight>
+                    <types:max20ftContainerWeight unit="kg">20000</types:max20ftContainerWeight>
+					<types:allowedLengthTypesAndPositionsBottomTier>
+						<types:containerLengthTypeWithPositions>
+							<types:containerLengthType>20</types:containerLengthType>
+							<types:track>T1</types:track>
+							<types:metermark unit="mm">135000</types:metermark>
+							<types:platformSlotPosition>
+								<types:slot>1</types:slot>
+							</types:platformSlotPosition>
+						</types:containerLengthTypeWithPositions>
+						<types:containerLengthTypeWithPositions>
+							<types:containerLengthType>20</types:containerLengthType>
+							<types:track>T1</types:track>
+							<types:metermark unit="mm">145000</types:metermark>
+							<types:platformSlotPosition>
+								<types:slot>2</types:slot>
+							</types:platformSlotPosition>
+						</types:containerLengthTypeWithPositions>
+						<types:containerLengthTypeWithPositions>
+							<types:containerLengthType>40</types:containerLengthType>
+							<types:track>T1</types:track>
+							<types:metermark unit="mm">140000</types:metermark>
+							<types:platformSlotPosition>
+								<types:slot>1</types:slot>
+							</types:platformSlotPosition>
+							<types:platformSlotPosition>
+								<types:slot>2</types:slot>
+							</types:platformSlotPosition>
+						</types:containerLengthTypeWithPositions>
+					</types:allowedLengthTypesAndPositionsBottomTier>
+					<types:allowedLengthTypesAndPositionsTopTier>
+						<types:containerLengthTypeWithPositions>
+							<types:containerLengthType>40</types:containerLengthType>
+							<types:track>T1</types:track>
+							<types:metermark unit="mm">140000</types:metermark>
+							<types:platformSlotPosition>
+								<types:slot>1</types:slot>
+							</types:platformSlotPosition>
+							<types:platformSlotPosition>
+								<types:slot>2</types:slot>
+							</types:platformSlotPosition>
+						</types:containerLengthTypeWithPositions>
+					</types:allowedLengthTypesAndPositionsTopTier>
+                </types:platform>
+            </types:platforms>
+			<types:maxNetWeight unit="kg">80000</types:maxNetWeight>
+            <types:length unit="mm">20000</types:length>
+            <types:reeferSuitableTopTier>false</types:reeferSuitableTopTier>
+            <types:reeferSuitableBottomTier>false</types:reeferSuitableBottomTier>
+        </types:railcar>
+    </n4tlo:railcars>
+</n4tlo:RailcarResponse>

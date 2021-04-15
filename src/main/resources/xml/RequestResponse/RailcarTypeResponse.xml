@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<n4tlo:RailcarTypeResponse xmlns:n4tlo="http://www.syncrotess.com/external/n4-tlo"
+ xmlns:types="http://www.syncrotess.com/external/n4-tlo/types"
+ xmlns:common="http://www.syncrotess.com/external/n4-tlo/common/types"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="http://www.syncrotess.com/external/n4-tlo file:/C:/dev/src/DPWorld/currentInterfaces/tlo/git/external-n4-tlo/n4-tlo-messages.xsd">
+    <common:header>
+        <common:senderId>senderId0</common:senderId>
+        <common:receiverId>receiverId0</common:receiverId>
+        <common:interfaceVersion>interfaceVersion0</common:interfaceVersion>
+        <common:timestamp>2006-05-04T18:13:51.0</common:timestamp>
+        <common:requestResponseId>requestResponseId0</common:requestResponseId>
+    </common:header>
+    <n4tlo:railcarTypes>
+		<types:railcarType>
+			<types:id>S566</types:id>
+			<types:platformTypes>
+				<types:platformType>
+					<types:id>S566B</types:id>
+					<types:numberOfSlots>2</types:numberOfSlots>
+					<types:well>true</types:well>
+					<types:deckHeight unit="mm">0</types:deckHeight>
+					<types:maxNetWeight unit="kg">50000</types:maxNetWeight>
+					<types:tareWeight unit="kg">20000</types:tareWeight>
+					<types:max20ftContainerWeight unit="kg">20000</types:max20ftContainerWeight>
+				</types:platformType>
+				<types:platformType>
+					<types:id>S566C</types:id>
+					<types:numberOfSlots>2</types:numberOfSlots>
+					<types:well>true</types:well>
+					<types:deckHeight unit="mm">0</types:deckHeight>
+					<types:maxNetWeight unit="kg">50000</types:maxNetWeight>
+					<types:tareWeight unit="kg">20000</types:tareWeight>
+					<types:max20ftContainerWeight unit="kg">20000</types:max20ftContainerWeight>
+				</types:platformType>
+			</types:platformTypes>
+			<types:maxNetWeight unit="kg">200000</types:maxNetWeight>
+			<types:tareWeight unit="kg">80000</types:tareWeight>
+			<types:length unit="mm">44000</types:length>
+			<types:reeferSuitableTopTier>false</types:reeferSuitableTopTier>
+			<types:reeferSuitableBottomTier>false</types:reeferSuitableBottomTier>
+		</types:railcarType>
+		<types:railcarType>
+			<types:id>S522</types:id>
+			<types:platformTypes>
+				<types:platformType>
+					<types:id>S522B</types:id>
+					<types:numberOfSlots>2</types:numberOfSlots>
+					<types:well>true</types:well>
+					<types:deckHeight unit="mm">0</types:deckHeight>
+					<types:maxNetWeight unit="kg">50000</types:maxNetWeight>
+					<types:tareWeight unit="kg">20000</types:tareWeight>
+					<types:max20ftContainerWeight unit="kg">20000</types:max20ftContainerWeight>
+				</types:platformType>
+				<types:platformType>
+					<types:id>S522C</types:id>
+					<types:numberOfSlots>2</types:numberOfSlots>
+					<types:well>true</types:well>
+					<types:deckHeight unit="mm">0</types:deckHeight>
+					<types:maxNetWeight unit="kg">50000</types:maxNetWeight>
+					<types:tareWeight unit="kg">20000</types:tareWeight>
+					<types:max20ftContainerWeight unit="kg">20000</types:max20ftContainerWeight>
+				</types:platformType>
+			</types:platformTypes>
+			<types:maxNetWeight unit="kg">200000</types:maxNetWeight>
+			<types:tareWeight unit="kg">80000</types:tareWeight>
+			<types:length unit="mm">44000</types:length>
+			<types:reeferSuitableTopTier>false</types:reeferSuitableTopTier>
+			<types:reeferSuitableBottomTier>false</types:reeferSuitableBottomTier>
+		</types:railcarType>
+    </n4tlo:railcarTypes>
+</n4tlo:RailcarTypeResponse>

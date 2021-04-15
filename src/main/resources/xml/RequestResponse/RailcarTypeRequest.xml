@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<n4tlo:ContainerRequest xmlns:types="http://www.syncrotess.com/external/n4-tlo/types"
+<n4tlo:RailcarTypeRequest xmlns:n4tlo="http://www.syncrotess.com/external/n4-tlo"
+ xmlns:types="http://www.syncrotess.com/external/n4-tlo/types"
  xmlns:common="http://www.syncrotess.com/external/n4-tlo/common/types"
- xmlns:n4tlo="http://www.syncrotess.com/external/n4-tlo"
  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
  xsi:schemaLocation="http://www.syncrotess.com/external/n4-tlo file:/C:/dev/src/DPWorld/currentInterfaces/tlo/git/external-n4-tlo/n4-tlo-messages.xsd">
     <common:header>
@@ -11,4 +11,4 @@
         <common:timestamp>2006-05-04T18:13:51.0</common:timestamp>
         <common:requestResponseId>requestResponseId0</common:requestResponseId>
     </common:header>
-</n4tlo:ContainerRequest>
+</n4tlo:RailcarTypeRequest>

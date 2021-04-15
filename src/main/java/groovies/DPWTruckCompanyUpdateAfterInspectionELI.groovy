@@ -3,23 +3,25 @@
  *
  */
 
+
 import com.navis.argo.ContextHelper
-import com.navis.argo.business.api.ArgoUtils
-import com.navis.argo.business.atoms.DrayStatusEnum;
+import com.navis.argo.business.atoms.DrayStatusEnum
 import com.navis.argo.business.atoms.UnitCategoryEnum
-import com.navis.argo.business.model.LocPosition;
-import com.navis.external.framework.entity.AbstractEntityLifecycleInterceptor;
-import com.navis.external.framework.entity.EEntityView;
-import com.navis.external.framework.util.EFieldChanges;
+import com.navis.external.framework.entity.AbstractEntityLifecycleInterceptor
+import com.navis.external.framework.entity.EEntityView
+import com.navis.external.framework.util.EFieldChanges
 import com.navis.external.framework.util.EFieldChangesView
 import com.navis.external.framework.util.ExtensionUtils
-import com.navis.framework.persistence.Entity;
-import com.navis.inventory.InventoryField;
-import com.navis.inventory.business.units.Routing;
+import com.navis.framework.business.Roastery
+import com.navis.framework.persistence.Entity
+import com.navis.inventory.InvField
+import com.navis.inventory.InventoryField
+import com.navis.inventory.business.api.UnitFinder
+import com.navis.inventory.business.units.Routing
 import com.navis.inventory.business.units.Unit
-import com.navis.inventory.business.units.UnitFacilityVisit;
-import org.apache.log4j.Level;
-import org.apache.log4j.Logger;
+import com.navis.inventory.business.units.UnitFacilityVisit
+import org.apache.log4j.Level
+import org.apache.log4j.Logger
 
 /**When one of the containers is designated for an off-dock inspection,  Bonded Trucking Company is assigned to move the container to/from the Customs facility.
  *  Upon the return of the container the 'Trucking Company' field is overwritten with the name of the (bonded trucking company)trucking company that has returned the container to the terminal.
@@ -36,7 +38,9 @@ class DPWTruckCompanyUpdateAfterInspectionELI extends AbstractEntityLifecycleInt
         LOGGER.debug("Field Changes :: "+inFieldChanges);
         super.validateChanges(inEntity, inFieldChanges);
     }
+
     public void onCreate(EEntityView eentityview, EFieldChangesView efieldchangesview, EFieldChanges efieldchanges) {
+        updateTlo(eentityview._entity, efieldchangesview); //ContainerUpdateNotification
     }
 
     public void onUpdate(EEntityView eentityview, EFieldChangesView inOriginalFieldChanges, EFieldChanges efieldchanges) {
@@ -77,33 +81,44 @@ class DPWTruckCompanyUpdateAfterInspectionELI extends AbstractEntityLifecycleInt
             }
         }
         super.onUpdate(eentityview, inOriginalFieldChanges, efieldchanges);
+
+        updateTlo(eentityview._entity, inOriginalFieldChanges); //ContainerUpdateNotification
     }
 
     @Override
     void preDelete(Entity inEntity) {
-        LOGGER.setLevel(Level.DEBUG);
-        LOGGER.debug("preDelete :: "+inEntity);
         super.preDelete(inEntity);
 
-        //check if unit is associated with live train visit (IB or OB)
-        Unit unit = (Unit) inEntity;
-        UnitFacilityVisit ufv = unit.getUnitActiveUfvNowActive();
-        String railSlot = ufv.getUfvRailcarPositionSlot();
-        if(ArgoUtils.isEmpty(railSlot)) {
-            LocPosition locPosition = ufv.getFinalPlannedPosition();
-            LOGGER.debug("locPosition: "+locPosition);
-            if(locPosition == null || !locPosition.isRailPosition()) {
-                return;
-            }
-        }
+        //@TODO: If error occurs while deleting the unit, the below logic would get executed, which should not be happened.
+        // Moving this logic validateDelete() which ends in same result. Do we have any api to check the deletion eligibility?
+        updateTlo(inEntity, null); //ContainerUpdateNotification
+    }
 
-        LOGGER.debug("preDelete adaptor: " + adaptor + " : " + inEntity);
-        if(adaptor) {
-            Map<String, String> unitMap = new HashMap<String, String>();
-            unitMap.put(adaptor.UNIT_ID, unit.getUnitId());
+
+    //UFV ELI - Position update,
+    //Unit ELI - id, routing,
+    //Equipment - lengthType, tareWt, height, isoCode,
+
+    //check if unit is associated with OB train - is Rail container wrt OB?
+    private void updateTlo(Unit inUnit, EFieldChangesView inFieldChanges) {
+        LOGGER.debug("updateTlo: "+inFieldChanges);
+
+        UnitFacilityVisit ufv = inUnit.getUnitActiveUfvNowActive();
+        Map<String, String> unitMap = new HashMap<String, String>();
+        unitMap.put(adaptor.UFV_OBJECT, ufv);
+        if (inFieldChanges == null) { //unit Delete call
             adaptor.convertN4UpdateToTloNotification(adaptor.TEXT_NOTIFICATION__CONTAINER_DELETE, unitMap);
-        }
 
+        } else if (ufv && adaptor && adaptor.isRailContainer(ufv)) {
+
+
+                    || inFieldChanges.hasFieldChange(InvField.UNIT_ROUTING)
+                    || inFieldChanges.hasFieldChange(InvField.UNIT_IS_OOG)
+
+
+
+            adaptor.convertN4UpdateToTloNotification(adaptor.TEXT_NOTIFICATION__CONTAINER_UPDATE, unitMap);
+        }
     }
 
     private def adaptor = ExtensionUtils.getLibrary(ContextHelper.getThreadUserContext(), "TLOAdaptor");

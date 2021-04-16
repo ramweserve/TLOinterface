@@ -95,32 +95,50 @@ class DPWTruckCompanyUpdateAfterInspectionELI extends AbstractEntityLifecycleInt
     }
 
 
+    /**
+     * A `ContainerUpdateNotification` is sent when the following triggers occur:
+     <ul><li>Position update</li>
+     <li>Routing updates</li>
+     <li>OOG/Damage/Hazard updates</li>
+     <li>Weight updates</li>
+     <li>Destination updates</li>
+     <li>Special Stow updates</li>
+     <li>Flex Field (such as locked status) updates</li>
+     <li>Group Code updates</li>
+     <li>Train Load Plan updates</li></ul>
+     */
+
+    //@TODO : check if this can be achieved using general notice of UNIT_PROPERTY_UPDATE
     //UFV ELI - Position update,
     //Unit ELI - id, routing,
     //Equipment - lengthType, tareWt, height, isoCode,
+
+    //@TODO: while deleting the unit, delete ELI call and update ELI call happens. Need to fix this.
 
     //check if unit is associated with OB train - is Rail container wrt OB?
     private void updateTlo(Unit inUnit, EFieldChangesView inFieldChanges) {
         LOGGER.debug("updateTlo: "+inFieldChanges);
 
         UnitFacilityVisit ufv = inUnit.getUnitActiveUfvNowActive();
-        Map<String, String> unitMap = new HashMap<String, String>();
-        unitMap.put(adaptor.UFV_OBJECT, ufv);
-        if (inFieldChanges == null) { //unit Delete call
-            adaptor.convertN4UpdateToTloNotification(adaptor.TEXT_NOTIFICATION__CONTAINER_DELETE, unitMap);
+        LOGGER.debug("ufv: "+ufv);
+        def adaptor = ExtensionUtils.getLibrary(ContextHelper.getThreadUserContext(), "TLOAdaptor");
+        if(ufv && adaptor && adaptor.isRailContainer(ufv)) {
+            LOGGER.debug("adaptor: "+adaptor);
+            Map<String, String> unitMap = new HashMap<String, String>();
+            unitMap.put(adaptor.UFV_OBJECT, ufv);
+            if (inFieldChanges == null) { //unit Delete call
+                LOGGER.debug("container delete call");
+                adaptor.convertN4UpdateToTloNotification(adaptor.TEXT_NOTIFICATION__CONTAINER_DELETE, unitMap);
 
-        } else if (ufv && adaptor && adaptor.isRailContainer(ufv)) {
-
-
-                    || inFieldChanges.hasFieldChange(InvField.UNIT_ROUTING)
-                    || inFieldChanges.hasFieldChange(InvField.UNIT_IS_OOG)
-
-
-
-            adaptor.convertN4UpdateToTloNotification(adaptor.TEXT_NOTIFICATION__CONTAINER_UPDATE, unitMap);
+            } else if (inFieldChanges.hasFieldChange(InvField.UNIT_ROUTING)
+                    || inFieldChanges.hasFieldChange(InvField.UNIT_IS_OOG)) {
+                //@TODO: add more criteria as per the requirement
+                LOGGER.debug("container update call");
+                adaptor.convertN4UpdateToTloNotification(adaptor.TEXT_NOTIFICATION__CONTAINER_UPDATE, unitMap);
+            }
         }
     }
 
-    private def adaptor = ExtensionUtils.getLibrary(ContextHelper.getThreadUserContext(), "TLOAdaptor");
+    //private def adaptor = ExtensionUtils.getLibrary(ContextHelper.getThreadUserContext(), "TLOAdaptor");
     private Logger LOGGER = Logger.getLogger(DPWTruckCompanyUpdateAfterInspectionELI.class);
 }

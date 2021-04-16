@@ -265,6 +265,7 @@ class TLOAdaptor {
                 pushOutboundJmsMessage(jaxbToXml(Class.forName("com.syncrotess.external.n4_tlo.RailcarConsistNotification"), railcarConsistNotification), INTEGRATION_SERVICE__N4TOTLO);*/
 
             } else if (TEXT_NOTIFICATION__CONTAINER_DELETE.equals(inNotificationType)) {
+                LOGGER.debug("container delete")
                 UnitFacilityVisit ufv = inParamMap.get(UFV_OBJECT);
                 ContainerDeleteNotification containerDeleteNotification = new ContainerDeleteNotification();
                 containerDeleteNotification.setHeader(buildHeader(null));
@@ -272,9 +273,12 @@ class TLOAdaptor {
                 pushOutboundJmsMessage(jaxbToXml(Class.forName("com.syncrotess.external.n4_tlo.ContainerDeleteNotification"), containerDeleteNotification), INTEGRATION_SERVICE__N4TOTLO);
 
             } else if (TEXT_NOTIFICATION__CONTAINER_UPDATE.equals(inNotificationType)) {
+                LOGGER.debug("container update")
                 ContainerUpdateNotification containerUpdateNotification = new ContainerUpdateNotification();
                 containerUpdateNotification.setHeader(buildHeader(null));
+                LOGGER.debug("before call")
                 containerUpdateNotification.setContainer(frameContainerObject(inParamMap.get(UFV_OBJECT)));
+                LOGGER.debug("after call")
                 pushOutboundJmsMessage(jaxbToXml(Class.forName("com.syncrotess.external.n4_tlo.ContainerUpdateNotification"), containerUpdateNotification), INTEGRATION_SERVICE__N4TOTLO);
 
             } else if (TEXT_NOTIFICATION__CONTAINER_TRANSIT_DELETE.equals(inNotificationType)) {
@@ -330,7 +334,6 @@ class TLOAdaptor {
             if(trainVisitDetails.getCvdETD()) {
                 subTrain.setEtd(getXMLGregorianTime(trainVisitDetails.getCvdETD()));
             }
-            //@TODO: how to derive?
             subTrain.setLocked(false);
             return subTrain;
 
@@ -362,7 +365,7 @@ class TLOAdaptor {
             xsdRailcar.setOutboundSubTrain(obTrainId)
             xsdRailcar.setFixedOutboundSubTrain(isFixedOutboundTrain);
             xsdRailcar.setDestination(railcarVisit.getRcarvDestination());
-            xsdRailcar.setLocked(false); //@TODO: derive this value
+            xsdRailcar.setLocked(false);
 
             TrackPosition xsdPosition = new TrackPosition();
             xsdPosition.setTrack(railcarVisit.getRcarvTrack()); //Need to double check
@@ -624,8 +627,14 @@ class TLOAdaptor {
             }
             container.setGrossWeight(grossWeight);
 
+            LOGGER.debug("unit goods: "+unit.getUnitGoods());
             if (unit.getUnitGoods()) {
-                container.setHazardous(unit.getUnitGoods().getGdsIsHazardous());
+                LOGGER.debug("isHaz: "+unit.getUnitGoods().getGdsIsHazardous());
+                if(unit.getUnitGoods().getGdsIsHazardous() != null) {
+                    container.setHazardous(unit.getUnitGoods().getGdsIsHazardous());
+                } else {
+                    container.setHazardous(false);
+                }
                 container.setDestination(unit.getUnitGoods().getGdsDestination());
             } else {
                 container.setHazardous(false);
@@ -656,6 +665,8 @@ class TLOAdaptor {
             container.setLockedOnSlot(Boolean.TRUE); //@TODO: How to derive?
             container.setSpecialStow1(SpecialStowType.ONLY_GROUNDSLOT); //@TODO: to be derived
             container.setDangerousGoodsClass(unit.getUnitGoods().getGdsImdgTypes());
+
+            LOGGER.debug("container: "+container);
             return container;
 
         } catch (Exception e) {
@@ -713,13 +724,13 @@ class TLOAdaptor {
     public static final String TEXT_NOTIFICATION__RAILCARTYPE = "RailcarTypeNotification";
     public static final String TEXT_NOTIFICATION__RAILCAR = "RailcarNotification";
     public static final String TEXT_NOTIFICATION__RAILCAR_CONSIST = "RailcarConsistNotification";
-    public static final String TEXT_NOTIFICATION__CONTAINER_DELETE = "RailcarConsistNotification";
-    public static final String TEXT_NOTIFICATION__CONTAINER_UPDATE = "ContainerUpdate";
-    public static final String TEXT_NOTIFICATION__CONTAINER_TRANSIT_DELETE = "ContainerTransitDelete";
-    public static final String TEXT_NOTIFICATION__CONTAINER_TRANSIT_UPDATE = "ContainerTransitUpdate";
-    public static final String TEXT_NOTIFICATION__SUBTRAIN_NOTIFICATION = "SubTrain";
-    //public static final String TEXT_NOTIFICATION__TRAIN_LOAD_PLAN = "TrainLoadPlan"; //TLO to N4
-    public static final String TEXT_NOTIFICATION__T3_DONE = "T3Done";
+    public static final String TEXT_NOTIFICATION__CONTAINER_DELETE = "ContainerDeleteNotification";
+    public static final String TEXT_NOTIFICATION__CONTAINER_UPDATE = "ContainerUpdateNotification";
+    public static final String TEXT_NOTIFICATION__CONTAINER_TRANSIT_DELETE = "ContainerTransitDeleteNotification";
+    public static final String TEXT_NOTIFICATION__CONTAINER_TRANSIT_UPDATE = "ContainerTransitUpdateNotification";
+    public static final String TEXT_NOTIFICATION__SUBTRAIN_NOTIFICATION = "SubTrainNotification";
+    //public static final String TEXT_NOTIFICATION__TRAIN_LOAD_PLAN = "TrainLoadPlanNotification"; //TLO to N4
+    public static final String TEXT_NOTIFICATION__T3_DONE = "T3DoneNotification";
 
     public static final String UFV_OBJECT = "ufvObj";
     public static final String WI_GKEY    = "wiGkey";
